@@ -279,17 +279,17 @@
                     });
                 });
             });
-        });
 
-        audioPlayers.forEach(player => {
-            player.addEventListener('waiting', function() {
-                const title = this.closest('li').querySelector('.audio-title');
-                title.innerHTML += ' <span style="color:#e67e22;">(加载中...)</span>';
-            });
+            audioPlayers.forEach(player => {
+                player.addEventListener('waiting', function() {
+                    const title = this.closest('li').querySelector('.audio-title');
+                    title.innerHTML += ' <span style="color:#e67e22;">(加载中...)</span>';
+                });
 
-            player.addEventListener('canplay', function() {
-                const title = this.closest('li').querySelector('.audio-title');
-                title.innerHTML = title.textContent.replace('(加载中...)', '');
+                player.addEventListener('canplay', function() {
+                    const title = this.closest('li').querySelector('.audio-title');
+                    title.innerHTML = title.textContent.replace('(加载中...)', '');
+                });
             });
         });
     </script>
